@@ -1,0 +1,41 @@
+package jiuk_kim;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+    	int[] p= {2,5,3,1,4};
+    	int[] answer = new int[p.length];
+        int[] count = new int[p.length];
+        int[] k = new int[p.length];
+     
+        int min=0;
+        int tmp=0;
+        
+        for(int i=0; i<5; i++) {
+        	
+        	min=i;
+        	for(int j=i+1; j<p.length; j++){
+                if(p[min]>p[j]){
+                    min=j;
+                }
+            }//
+        	for(int j=0; j<answer.length; j++){
+                k[j]=p[j];
+            }
+        	tmp=p[i];
+            p[i] = p[min];
+            p[min]=tmp;
+            for(int t=0; t<p.length; t++){
+                if(k[t]!=p[t]){
+                    count[t]++;
+                }
+            }
+        }
+        for(int i=0; i<p.length; i++){
+            System.out.print(answer[i]=count[i]);
+        }
+    
+    }
+
+    
+}

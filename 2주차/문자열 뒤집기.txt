@@ -1,0 +1,33 @@
+package jiuk_kim;
+
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        String[] line = new String[n];
+     
+        for(int i=0; i<n; i++) {
+        	line[i] = sc.nextLine();
+        }
+        for(int i=0; i<n; i++) {
+        	String s1="";
+        	String[] each_line = line[i].split(" ");
+        	int madi_length = each_line.length;
+        
+        	for(int j=0; j<madi_length;j++) {
+        		for(int k=each_line[j].length()-1; k>=0;k--) {
+        			s1=s1+each_line[j].charAt(k);
+        			
+        		}
+        		System.out.print(s1);
+        		s1="";
+        		System.out.print(" ");
+        	}	
+        	System.out.println();
+        } 
+    }
+}

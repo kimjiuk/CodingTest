@@ -1,0 +1,19 @@
+class Solution {
+    public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        int big = Math.max(n,m);
+        int small = Math.min(n,m);
+        
+        answer[0]=gcd(small,big);
+        answer[1]=n*m/answer[0];
+        return answer;
+    }
+    static int gcd(int a, int b){
+        while(b!=0){
+            int r = a%b;
+            a=b;
+            b=r;
+        }
+        return a;
+    }
+}

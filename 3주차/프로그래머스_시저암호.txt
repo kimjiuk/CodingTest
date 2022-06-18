@@ -1,0 +1,76 @@
+//내문제 풀이
+class Solution {
+    public String solution(String s, int n) {
+        String answer = "";
+        String[] alp={};
+        int check=0;
+        if(s.contains(" ")){
+            alp=s.split(" ");
+            check++;
+        }
+        else{
+            alp = s.split("");
+        }
+        int k = 0;
+        for(int i=0; i<alp.length; i++){
+            k=alp[i].charAt(0);
+            if(65<=k && k<=90){
+                k=k+n;
+                if(k>90){
+                    k=k-26;
+                }    
+            }
+            if(97<=k && k<=122){
+                k=k+n;
+                if(k>122){
+                    k=k-26;
+                }
+            }
+            if(check>0){
+                answer=answer+(char)k;
+                if(i==alp.length-1){
+                    break;
+                }    
+                answer=answer+" ";
+            }
+            else{
+                answer=answer+(char)k;
+            }
+            
+        }
+   
+        return answer;
+    }
+}
+
+// 효율성을 고려한 재풀이
+class Solution {
+    public String solution(String s, int n) {
+        String answer = "";
+        String[] alp={};
+        for(int i=0; i<s.length(); i++){
+            char ch=s.charAt(i);
+            if(ch==' '){
+                answer+=ch;
+            }
+            if(ch>='a'&& ch<='z'){
+                if(ch+n>'z'){
+                    answer += (char)(ch-26+n);
+                }
+                else{
+                    answer += (char)(ch+n);
+                }
+            }
+            else if(ch>='A' && ch<='Z'){
+                if(ch+n > 'Z'){
+                    answer += (char)(ch-26+n);
+                }
+                else{
+                    answer += (char)(ch+n);
+                }
+            }
+        }
+   
+        return answer;
+    }
+}

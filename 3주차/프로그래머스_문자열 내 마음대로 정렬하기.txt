@@ -1,0 +1,20 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+class Solution {
+    public String[] solution(String[] strings, int n) {
+        String[] answer = new String[strings.length];
+        String[] arr = new String[strings.length];
+        
+        for(int i=0; i<strings.length; i++){
+            arr[i]=strings[i].charAt(n)+strings[i];
+        }
+        Arrays.sort(arr);
+        for(int i=0; i<arr.length; i++){
+            
+        System.out.println(arr[i]);
+            answer[i]=arr[i].substring(1,arr[i].length());
+        }
+        return answer;
+    }
+}

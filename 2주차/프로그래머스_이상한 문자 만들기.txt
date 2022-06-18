@@ -1,0 +1,22 @@
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] k = s.split("");
+        int ix=0;
+        for(int i=0; i<k.length; i++){
+            if(k[i].equals(" ")){
+                answer+=" ";
+                ix=0;
+            }
+            else if(ix%2==0){
+                answer+=k[i].toUpperCase();
+                ix++;
+            }
+            else if(ix%2==1){
+                answer+=k[i].toLowerCase();
+                ix++;
+            }
+        }
+        return answer;
+    }
+}
